@@ -13,3 +13,11 @@ func TestContext(t *testing.T) {
 	todo := context.TODO()
 	fmt.Println(todo)
 }
+
+func TestContextWithValue(t *testing.T) {
+	contextA := context.Background()
+
+	contextB := context.WithValue(contextA, "nama", "Hafiz Ramadhan")
+	fmt.Println(contextB)
+	fmt.Println(contextB.Value("nama"))
+}
